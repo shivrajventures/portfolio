@@ -521,7 +521,7 @@
             <span class="tag">Food</span>
             <span class="tag">Menu</span>
           </div>
-          <button class="preview-btn">Live Preview →</button>
+          <button class="preview-btn" onclick="openLivePreview('restaurant', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -564,7 +564,7 @@
             <span class="tag">Clinic</span>
             <span class="tag">Booking</span>
           </div>
-          <button class="preview-btn">Live Preview →</button>
+          <button class="preview-btn" onclick="openLivePreview('clinic', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -607,7 +607,7 @@
             <span class="tag">Beauty</span>
             <span class="tag">Spa</span>
           </div>
-          <button class="preview-btn">Live Preview →</button>
+          <button class="preview-btn" onclick="openLivePreview('salon', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -650,12 +650,7 @@
             <span class="tag">Coaching</span>
             <span class="tag">Tuition</span>
           </div>
-          <a href="https://shivrajventures.github.io/Excel-Academy/" 
-       target="_blank" 
-       class="preview-btn"
-       style="text-decoration: none;">
-      Live Preview →
-    </a>
+          <button class="preview-btn" onclick="openLivePreview('coaching', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -697,7 +692,7 @@
             <span class="tag">Real Estate</span>
             <span class="tag">Property</span>
           </div>
-          <button class="preview-btn">Live Preview →</button>
+          <button class="preview-btn" onclick="openLivePreview('realestate', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -740,7 +735,7 @@
             <span class="tag">Wedding</span>
             <span class="tag">Photography</span>
           </div>
-          <button class="preview-btn">Live Preview →</button>
+          <button class="preview-btn" onclick="openLivePreview('events', event)">Live Preview →</button>
         </div>
       </div>
 
@@ -822,7 +817,7 @@
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="demo-site" id="demo-content"></div>
+      <div id="demo-content"></div>
       <div class="modal-actions">
         <a href="https://wa.me/918808913837?text=Hello%20Shivam%2C%20I%20want%20a%20website%20like%20this" class="whatsapp-btn">
           💬 I Want a Similar Website — WhatsApp Now
@@ -833,51 +828,105 @@
 </div>
 
 <script>
-const demos = { /* Same as original - kept unchanged for functionality */ 
-  restaurant: { title: 'Restaurant / Dhaba Website', primary: '#8B1a1a', secondary: '#5c0f0f', accent: '#e65100', name: 'Spice Garden Restaurant', tagline: 'Authentic Lucknowi Cuisine Since 1995', desc: 'Best kebabs, biryani & Awadhi cuisine in the heart of Lucknow', cards: [{icon:'🍢', title:'Kebabs & Tikka', desc:'Hand-crafted with secret spices'}, {icon:'🍚', title:'Dum Biryani', desc:'Slow-cooked Lucknowi style'}, {icon:'🍮', title:'Meetha', desc:'Shahi tukda, phirni, kheer'}] },
-  clinic: { title: 'Clinic / Doctor Website', primary: '#1565C0', secondary: '#0d47a1', accent: '#1976D2', name: 'LifeCare Clinic', tagline: 'Your Health, Our Priority', desc: 'Expert doctors available Mon–Sat · Book appointment online', cards: [{icon:'🩺', title:'General Medicine', desc:'Dr. Sharma — 15 yrs experience'}, {icon:'🦷', title:'Dental Care', desc:'Dr. Verma — expert dentist'}, {icon:'👶', title:'Pediatrics', desc:'Dr. Singh — child specialist'}] },
-  salon: { title: 'Beauty Salon / Spa Website', primary: '#6a1b9a', secondary: '#4a148c', accent: '#8e24aa', name: 'Glam Studio', tagline: 'Look Beautiful, Feel Confident', desc: 'Premium beauty services in Lucknow — Walk-in & appointments welcome', cards: [{icon:'💇', title:'Hair Services', desc:'Cut, color, keratin, styling'}, {icon:'💅', title:'Nail Art', desc:'Manicure, pedicure, nail art'}, {icon:'✨', title:'Skin & Spa', desc:'Facials, cleanup, waxing'}] },
-  coaching: { title: 'Coaching Center Website', primary: '#1b5e20', secondary: '#0a3d0a', accent: '#2e7d32', name: 'Excel Academy', tagline: 'Success Starts Here', desc: 'Lucknow’s top coaching for Class 9-12, IIT-JEE, NEET & UPSC', cards: [{icon:'🔬', title:'Science (PCM/PCB)', desc:'Class 9–12 expert faculty'}, {icon:'📐', title:'IIT-JEE / NEET', desc:'Proven results, small batches'}, {icon:'📋', title:'UPSC / State PCS', desc:'GS + Optional preparation'}] },
-  realestate: { title: 'Real Estate Website', primary: '#4e342e', secondary: '#3e2723', accent: '#6d4c41', name: 'PropLuck Homes', tagline: "Find Your Dream Home in Lucknow", desc: 'Trusted property dealer — Buy, Sell, Rent in Gomti Nagar, Hazratganj & more', cards: [{icon:'🏠', title:'Residential', desc:'Flats, houses, villas'}, {icon:'🏢', title:'Commercial', desc:'Shops, offices, warehouses'}, {icon:'🌱', title:'Plots', desc:'NA plots, agricultural land'}] },
-  events: { title: 'Event Planner Website', primary: '#880e4f', secondary: '#560027', accent: '#ad1457', name: 'Dream Events', tagline: 'Making Your Moments Unforgettable', desc: 'Weddings, birthdays, corporate events — Lucknow’s #1 event planner', cards: [{icon:'💍', title:'Wedding Planning', desc:'Full decoration & management'}, {icon:'🎂', title:'Birthday Events', desc:'Theme parties, cake, decor'}, {icon:'🎪', title:'Corporate Events', desc:'Professional event execution'}] }
+// demos object — liveUrl mein link daalo, warna '' chhod do
+const demos = {
+  restaurant: { liveUrl: 'https://shivrajventures.github.io/Spice-Garden-Restaurant', title: 'Restaurant / Dhaba Website', primary: '#8B1a1a', secondary: '#5c0f0f', accent: '#e65100', name: 'Spice Garden Restaurant', tagline: 'Authentic Lucknowi Cuisine Since 1995', desc: 'Best kebabs, biryani & Awadhi cuisine in the heart of Lucknow', cards: [{icon:'🍢', title:'Kebabs & Tikka', desc:'Hand-crafted with secret spices'}, {icon:'🍚', title:'Dum Biryani', desc:'Slow-cooked Lucknowi style'}, {icon:'🍮', title:'Meetha', desc:'Shahi tukda, phirni, kheer'}] },
+  clinic:     { liveUrl: 'https://shivrajventures.github.io/LifeCare-Clinic', title: 'Clinic / Doctor Website', primary: '#1565C0', secondary: '#0d47a1', accent: '#1976D2', name: 'LifeCare Clinic', tagline: 'Your Health, Our Priority', desc: 'Expert doctors available Mon-Sat · Book appointment online', cards: [{icon:'🩺', title:'General Medicine', desc:'Dr. Sharma — 15 yrs experience'}, {icon:'🦷', title:'Dental Care', desc:'Dr. Verma — expert dentist'}, {icon:'👶', title:'Pediatrics', desc:'Dr. Singh — child specialist'}] },
+  salon:      { liveUrl: 'https://shivrajventures.github.io/Glam-Studio/', title: 'Beauty Salon / Spa Website', primary: '#6a1b9a', secondary: '#4a148c', accent: '#8e24aa', name: 'Glam Studio', tagline: 'Look Beautiful, Feel Confident', desc: 'Premium beauty services in Lucknow — Walk-in & appointments welcome', cards: [{icon:'💇', title:'Hair Services', desc:'Cut, color, keratin, styling'}, {icon:'💅', title:'Nail Art', desc:'Manicure, pedicure, nail art'}, {icon:'✨', title:'Skin & Spa', desc:'Facials, cleanup, waxing'}] },
+  coaching:   { liveUrl: 'https://shivrajventures.github.io/Excel-Academy/', title: 'Coaching Center Website', primary: '#1b5e20', secondary: '#0a3d0a', accent: '#2e7d32', name: 'Excel Academy', tagline: 'Success Starts Here', desc: 'Lucknow top coaching for Class 9-12, IIT-JEE, NEET & UPSC', cards: [{icon:'🔬', title:'Science (PCM/PCB)', desc:'Class 9-12 expert faculty'}, {icon:'📐', title:'IIT-JEE / NEET', desc:'Proven results, small batches'}, {icon:'📋', title:'UPSC / State PCS', desc:'GS + Optional preparation'}] },
+  realestate: { liveUrl: '', title: 'Real Estate Website', primary: '#4e342e', secondary: '#3e2723', accent: '#6d4c41', name: 'PropLuck Homes', tagline: 'Find Your Dream Home in Lucknow', desc: 'Trusted property dealer — Buy, Sell, Rent in Gomti Nagar, Hazratganj & more', cards: [{icon:'🏠', title:'Residential', desc:'Flats, houses, villas'}, {icon:'🏢', title:'Commercial', desc:'Shops, offices, warehouses'}, {icon:'🌱', title:'Plots', desc:'NA plots, agricultural land'}] },
+  events:     { liveUrl: '', title: 'Event Planner Website', primary: '#880e4f', secondary: '#560027', accent: '#ad1457', name: 'Dream Events', tagline: 'Making Your Moments Unforgettable', desc: 'Weddings, birthdays, corporate events — Lucknow #1 event planner', cards: [{icon:'💍', title:'Wedding Planning', desc:'Full decoration & management'}, {icon:'🎂', title:'Birthday Events', desc:'Theme parties, cake, decor'}, {icon:'🎪', title:'Corporate Events', desc:'Professional event execution'}] }
 };
+
+function openLivePreview(type, event) {
+  event.stopPropagation();
+  const d = demos[type];
+  if (d.liveUrl) {
+    window.open(d.liveUrl, '_blank', 'noopener,noreferrer');
+  } else {
+    openModal(type);
+  }
+}
 
 function openModal(type) {
   const d = demos[type];
   document.getElementById('modal-title').textContent = d.title;
-  document.getElementById('demo-content').innerHTML = `
-    <div style="--site-primary:${d.primary}; --site-secondary:${d.secondary}; --site-accent:${d.accent}">
-      <div class="demo-nav">
-        <div class="demo-logo">${d.name}</div>
-        <div class="demo-nav-links">
-          <a href="#">Home</a><a href="#">Services</a><a href="#">About</a><a href="#">Contact</a>
+  const demoEl = document.getElementById('demo-content');
+
+  if (d.liveUrl) {
+    // Browser-frame style preview with live link
+    demoEl.innerHTML = `
+      <div style="border-radius:10px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.3);">
+        <!-- Browser chrome bar -->
+        <div style="background:#2a2a2a; padding:10px 14px; display:flex; align-items:center; gap:10px;">
+          <div style="display:flex; gap:6px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#ff5f56;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#27c93f;"></div>
+          </div>
+          <div style="flex:1; background:#3a3a3a; border-radius:6px; padding:5px 12px; display:flex; align-items:center; gap:8px;">
+            <span style="font-size:11px; color:#aaa;">🔒</span>
+            <span style="font-size:12px; color:#ccc; font-family:monospace; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">${d.liveUrl}</span>
+          </div>
+        </div>
+        <!-- Preview content -->
+        <div style="background:#f0f0f0; min-height:420px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3rem 2rem; text-align:center; position:relative;">
+          <!-- Blurred website mockup bg -->
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,${d.primary}22,${d.secondary}44);"></div>
+          <div style="position:relative; z-index:1;">
+            <div style="font-size:4rem; margin-bottom:1rem;">🌐</div>
+            <h3 style="font-size:1.4rem; font-weight:700; color:#111; margin-bottom:0.5rem; font-family:'Playfair Display',serif;">${d.name}</h3>
+            <p style="color:#555; font-size:0.9rem; margin-bottom:0.5rem;">${d.tagline}</p>
+            <p style="color:#888; font-size:0.8rem; margin-bottom:2rem;">Live website — browser security se direct preview possible nahi hai</p>
+            <a href="${d.liveUrl}" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:0.6rem;
+              background:#c9a84c; color:#0f1e38; padding:0.9rem 2rem;
+              border-radius:6px; font-size:1rem; font-weight:700;
+              text-decoration:none; transition:all 0.2s; box-shadow:0 4px 20px rgba(201,168,76,0.4);">
+              🔗 Live Website Kholein ↗
+            </a>
+            <p style="color:#aaa; font-size:0.75rem; margin-top:1rem;">New tab mein khulega</p>
+          </div>
         </div>
       </div>
-      <div class="demo-hero">
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
-        <p style="font-size:0.85rem; opacity:0.7; margin-bottom:1.5rem">${d.desc}</p>
-        <button class="demo-cta" style="background:${d.accent}">Contact Now</button>
-      </div>
-      <div class="demo-content">
-        <div class="demo-section-title">Our Services</div>
-        <div class="demo-cards">
-          ${d.cards.map(c => `
-            <div class="demo-card">
-              <div class="demo-card-icon">${c.icon}</div>
-              <h3>${c.title}</h3>
-              <p>${c.desc}</p>
-            </div>
-          `).join('')}
+    `;
+  } else {
+    // No URL — show HTML demo
+    demoEl.innerHTML = `
+      <div class="demo-site" style="--site-primary:${d.primary}; --site-secondary:${d.secondary}; --site-accent:${d.accent}">
+        <div class="demo-nav">
+          <div class="demo-logo">${d.name}</div>
+          <div class="demo-nav-links">
+            <a href="#">Home</a><a href="#">Services</a><a href="#">About</a><a href="#">Contact</a>
+          </div>
         </div>
-        <div style="background:#fff; border-radius:6px; padding:1rem; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-          <p style="font-size:0.85rem; color:#333; margin-bottom:0.5rem; font-weight:600;">📍 Lucknow, Uttar Pradesh</p>
-          <p style="font-size:0.8rem; color:#666;">📞 WhatsApp: 88089 13837</p>
+        <div class="demo-hero">
+          <h1>${d.name}</h1>
+          <p>${d.tagline}</p>
+          <p style="font-size:0.85rem; opacity:0.7; margin-bottom:1.5rem">${d.desc}</p>
+          <button class="demo-cta" style="background:${d.accent}">Contact Now</button>
         </div>
+        <div class="demo-content">
+          <div class="demo-section-title">Our Services</div>
+          <div class="demo-cards">
+            ${d.cards.map(c => `
+              <div class="demo-card">
+                <div class="demo-card-icon">${c.icon}</div>
+                <h3>${c.title}</h3>
+                <p>${c.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+          <div style="background:#fff; border-radius:6px; padding:1rem; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <p style="font-size:0.85rem; color:#333; margin-bottom:0.5rem; font-weight:600;">📍 Lucknow, Uttar Pradesh</p>
+            <p style="font-size:0.8rem; color:#666;">📞 WhatsApp: 88089 13837</p>
+          </div>
+        </div>
+        <div class="demo-footer">© 2025 ${d.name} · Website by Shivam Bharti</div>
       </div>
-      <div class="demo-footer">© 2025 ${d.name} · Website by Shivam Bharti</div>
-    </div>
-  `;
+    `;
+  }
+
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
