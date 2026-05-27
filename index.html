@@ -35,10 +35,34 @@
     border-bottom: 1px solid rgba(201,168,76,0.2);
   }
   .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 22px; height: 22px; }
+  .logo-text {
+    display: flex; flex-direction: column; line-height: 1.1;
+  }
+  .logo-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem; font-weight: 700;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.01em;
+  }
+  .logo-tagline {
+    font-size: 0.62rem; font-weight: 400;
     color: var(--gold);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
@@ -418,7 +442,20 @@
 <body>
 
 <nav>
-  <div class="logo">SB.</div>
+  <a href="#" class="logo" aria-label="Shivam Bharti - Home">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#0f1e38"/>
+        <rect x="13" y="3" width="8" height="8" rx="1.5" fill="#0f1e38" opacity="0.6"/>
+        <rect x="3" y="13" width="8" height="8" rx="1.5" fill="#0f1e38" opacity="0.6"/>
+        <path d="M13 17.5C13 15.015 15.015 13 17.5 13C19.985 13 22 15.015 22 17.5C22 19.985 19.985 22 17.5 22C15.015 22 13 19.985 13 17.5Z" fill="#0f1e38"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-name">Shivam Bharti</span>
+      <span class="logo-tagline">Web &amp; Digital</span>
+    </div>
+  </a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#services" onclick="closeNav()">Services</a></li>
     <li><a href="#portfolio" onclick="closeNav()">Portfolio</a></li>
