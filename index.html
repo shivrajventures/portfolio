@@ -1,1 +1,966 @@
-<h1> Welcome to Shivraj Ventures </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Bharti — WordPress & Social Media | Lucknow</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1e38;
+    --navy2: #1a2f52;
+    --gold: #c9a84c;
+    --gold2: #e8c96a;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8a9ab5;
+    --light: #eef1f7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,30,56,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--gray); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 0.55rem 1.3rem; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold2); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.4rem 1rem; border-radius: 2px;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 900; line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    color: var(--gray); font-size: 1.05rem; line-height: 1.8;
+    margin-bottom: 2.5rem; max-width: 440px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-weight: 500; text-decoration: none; font-size: 0.9rem;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1px solid rgba(201,168,76,0.4); color: var(--gold);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-weight: 500; text-decoration: none; font-size: 0.9rem;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+
+  .hero-right {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .stat-box:hover { border-color: rgba(201,168,76,0.3); }
+  .stat-box .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--gold);
+  }
+  .stat-box .label {
+    color: var(--gray); font-size: 0.8rem; margin-top: 0.3rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .stat-box.featured {
+    grid-column: span 2;
+    background: rgba(201,168,76,0.08);
+    border-color: rgba(201,168,76,0.25);
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .stat-box.featured .icon {
+    font-size: 2rem; flex-shrink: 0;
+  }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 5%; }
+  .section-label {
+    color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+    margin-bottom: 1rem; line-height: 1.1;
+  }
+  .section-sub { color: var(--gray); font-size: 1rem; line-height: 1.7; max-width: 500px; }
+  .section-header { margin-bottom: 3.5rem; }
+
+  /* SERVICES */
+  .services { background: rgba(255,255,255,0.02); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 2rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transition: transform 0.3s;
+  }
+  .service-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  .service-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .service-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--gold);
+  }
+  .service-price span { font-size: 0.85rem; color: var(--gray); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .features-list { list-style: none; margin: 1rem 0; }
+  .features-list li {
+    color: var(--gray); font-size: 0.85rem; padding: 0.35rem 0;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .features-list li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+  /* PORTFOLIO */
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .portfolio-card {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: all 0.3s; cursor: pointer;
+    background: rgba(255,255,255,0.03);
+  }
+  .portfolio-card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.3); }
+  .portfolio-preview {
+    height: 200px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .p-restaurant { background: linear-gradient(135deg, #1a0a00, #3d1f00); }
+  .p-clinic { background: linear-gradient(135deg, #001a2c, #003a5c); }
+  .p-salon { background: linear-gradient(135deg, #1a0020, #400050); }
+  .p-coaching { background: linear-gradient(135deg, #001a00, #003300); }
+  .p-realstate { background: linear-gradient(135deg, #1a1500, #3d3000); }
+  .p-events { background: linear-gradient(135deg, #1a0010, #400030); }
+
+  .preview-mockup {
+    width: 85%; background: rgba(255,255,255,0.95);
+    border-radius: 6px 6px 0 0; padding: 0.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .mockup-bar {
+    display: flex; gap: 4px; margin-bottom: 6px;
+  }
+  .mockup-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+  }
+  .mockup-content { background: #f0f0f0; border-radius: 3px; overflow: hidden; }
+  .mockup-header { height: 22px; display: flex; align-items: center; padding: 0 8px; gap: 6px; }
+  .mockup-nav { display: flex; gap: 4px; }
+  .mockup-nav span { font-size: 5px; color: #333; font-family: sans-serif; font-weight: 600; }
+  .mockup-hero-img { height: 55px; display: flex; align-items: center; justify-content: center; }
+  .mockup-hero-text { text-align: center; }
+  .mockup-hero-text .mht { font-size: 7px; font-weight: 700; color: #fff; font-family: sans-serif; }
+  .mockup-hero-text .mhs { font-size: 5px; color: rgba(255,255,255,0.7); font-family: sans-serif; }
+  .mockup-cards { display: flex; gap: 3px; padding: 4px; }
+  .mockup-card { flex: 1; height: 18px; border-radius: 2px; }
+
+  .portfolio-info { padding: 1.25rem; }
+  .portfolio-info h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.3rem; }
+  .portfolio-info p { color: var(--gray); font-size: 0.8rem; margin-bottom: 1rem; }
+  .portfolio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag {
+    background: rgba(201,168,76,0.1); color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+  .preview-btn {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 0.6rem 1.2rem; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 500; cursor: pointer;
+    transition: all 0.2s; width: 100%;
+  }
+  .preview-btn:hover { background: var(--gold2); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(5,10,20,0.95); align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--navy2); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px; width: 100%; max-width: 900px;
+    max-height: 90vh; overflow-y: auto;
+  }
+  .modal-header {
+    padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; background: var(--navy2); z-index: 1;
+  }
+  .modal-header h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+  .modal-close {
+    background: rgba(255,255,255,0.07); border: none; color: var(--white);
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.15); }
+  .modal-body { padding: 2rem; }
+  .demo-site { background: #fff; border-radius: 8px; overflow: hidden; min-height: 500px; }
+  .demo-nav {
+    background: var(--site-primary, #1a3a5c); padding: 0.8rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .demo-logo { color: #fff; font-weight: 700; font-size: 1rem; }
+  .demo-nav-links { display: flex; gap: 1rem; }
+  .demo-nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.8rem; }
+  .demo-hero {
+    padding: 3rem 1.5rem; text-align: center;
+    background: linear-gradient(135deg, var(--site-primary, #1a3a5c), var(--site-secondary, #0a2040));
+    color: #fff;
+  }
+  .demo-hero h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .demo-hero p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem; }
+  .demo-cta { background: var(--site-accent, #c9a84c); color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 4px; font-size: 0.85rem; cursor: pointer; }
+  .demo-content { padding: 2rem 1.5rem; background: #f8f8f8; }
+  .demo-section-title { font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 1rem; text-align: center; }
+  .demo-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .demo-card { background: #fff; border-radius: 6px; padding: 1rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .demo-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .demo-card h3 { font-size: 0.85rem; color: #333; margin-bottom: 0.3rem; }
+  .demo-card p { font-size: 0.75rem; color: #666; }
+  .demo-footer { background: var(--site-primary, #1a3a5c); color: rgba(255,255,255,0.6); padding: 1rem 1.5rem; font-size: 0.75rem; text-align: center; }
+  .modal-actions { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .whatsapp-btn {
+    background: #25D366; color: #fff; border: none;
+    padding: 0.8rem 1.5rem; border-radius: 4px; font-size: 0.9rem;
+    font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .whatsapp-btn:hover { background: #1ebe5d; }
+
+  /* PROCESS */
+  .process { background: rgba(255,255,255,0.015); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0; max-width: 1200px; margin: 0 auto;
+    position: relative;
+  }
+  .process-step { padding: 2rem; text-align: center; position: relative; }
+  .step-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .process-step h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .process-step p { color: var(--gray); font-size: 0.85rem; line-height: 1.6; }
+
+  /* CONTACT */
+  .contact-wrap {
+    max-width: 700px; margin: 0 auto; text-align: center;
+  }
+  .contact-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin: 2.5rem 0;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 1.5rem;
+    text-decoration: none; color: var(--white);
+    transition: all 0.2s;
+  }
+  .contact-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+  .contact-card .ci { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .contact-card .ct { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+  .contact-card .cv { font-size: 0.9rem; font-weight: 500; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 5%; border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { color: var(--gray); font-size: 0.8rem; }
+  footer span { color: var(--gold); }
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .nav-links { display: none; }
+    .demo-cards { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">SB.</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/918808913837" class="nav-cta">WhatsApp Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left fade-up">
+      <div class="hero-tag">Lucknow Based Digital Services</div>
+      <h1>Websites &<br><span>Digital Growth</span><br>for Local Businesses</h1>
+      <p>Main Shivam Bharti hoon — Lucknow ke local businesses ke liye professional WordPress websites aur social media management karta hoon.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary">Sample Websites Dekho</a>
+        <a href="https://wa.me/918808913837" class="btn-outline">WhatsApp Karo</a>
+      </div>
+    </div>
+    <div class="hero-right fade-up">
+      <div class="stat-box">
+        <div class="num">₹5K</div>
+        <div class="label">Website se shuru</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">7</div>
+        <div class="label">Din mein ready</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">₹3.5K</div>
+        <div class="label">Social media/month</div>
+      </div>
+      <div class="stat-box featured">
+        <div class="icon">📍</div>
+        <div>
+          <div class="num" style="font-size:1.2rem">Lucknow Based</div>
+          <div class="label">Face-to-face meeting possible</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header fade-up">
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Services & Pricing</h2>
+      <p class="section-sub">Simple, fixed pricing — koi hidden charges nahi. Jo quote kiya wahi final.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">🌐</div>
+        <h3>Basic Website</h3>
+        <p>Chhote businesses ke liye perfect — clean, professional, mobile-friendly.</p>
+        <ul class="features-list">
+          <li>5 Pages (Home, About, Services, Gallery, Contact)</li>
+          <li>Mobile friendly design</li>
+          <li>Contact form + WhatsApp button</li>
+          <li>Google Maps integration</li>
+          <li>7 din mein delivery</li>
+        </ul>
+        <div class="service-price">₹5,000 <span>one-time</span></div>
+      </div>
+      <div class="service-card fade-up" style="border-color: rgba(201,168,76,0.25);">
+        <div style="background: rgba(201,168,76,0.15); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 3px; display: inline-block; margin-bottom: 0.75rem;">Most Popular</div>
+        <div class="service-icon">💻</div>
+        <h3>Standard Website</h3>
+        <p>Professional website with SEO — Google pe dikhne ke liye.</p>
+        <ul class="features-list">
+          <li>7 Pages + Blog section</li>
+          <li>Basic SEO setup</li>
+          <li>Fast loading speed</li>
+          <li>Social media links</li>
+          <li>1 month free support</li>
+          <li>10 din mein delivery</li>
+        </ul>
+        <div class="service-price">₹9,000 <span>one-time</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Instagram aur Facebook consistently active rakhna — aapka kaam nahi, mera kaam.</p>
+        <ul class="features-list">
+          <li>10 posts per month</li>
+          <li>Professional Canva graphics</li>
+          <li>Captions + hashtags</li>
+          <li>1 Reel per month</li>
+          <li>Monthly report</li>
+        </ul>
+        <div class="service-price">₹3,500 <span>/month</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" style="padding: 6rem 5%;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header fade-up">
+      <div class="section-label">Sample Work</div>
+      <h2 class="section-title">Portfolio Demos</h2>
+      <p class="section-sub">Yeh sample websites hain — aapke business ke liye bhi aisa banaunga. "Preview" pe click karke live demo dekho.</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- Restaurant -->
+      <div class="portfolio-card fade-up" onclick="openModal('restaurant')">
+        <div class="portfolio-preview p-restaurant">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#8B1a1a;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">🍽 Spice Garden</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Menu</span>
+                  <span style="color:rgba(255,255,255,0.7)">About</span>
+                  <span style="color:rgba(255,255,255,0.7)">Contact</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#8B1a1a,#5c0f0f);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Authentic Lucknowi Cuisine</div>
+                  <div class="mhs">Taste the tradition</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#fff3e0; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#fce4ec; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#e8f5e9; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Restaurant / Dhaba</h3>
+          <p>Menu, gallery, online order button, location map</p>
+          <div class="portfolio-tags">
+            <span class="tag">Restaurant</span>
+            <span class="tag">Food</span>
+            <span class="tag">Menu</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+      <!-- Clinic -->
+      <div class="portfolio-card fade-up" onclick="openModal('clinic')">
+        <div class="portfolio-preview p-clinic">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#1565C0;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">🏥 LifeCare Clinic</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Doctors</span>
+                  <span style="color:rgba(255,255,255,0.7)">Book</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#1565C0,#0d47a1);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Your Health, Our Priority</div>
+                  <div class="mhs">Book appointment online</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#e3f2fd; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#e8eaf6; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#e0f2f1; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Clinic / Doctor</h3>
+          <p>Appointment booking, doctor profile, services, timing</p>
+          <div class="portfolio-tags">
+            <span class="tag">Healthcare</span>
+            <span class="tag">Clinic</span>
+            <span class="tag">Booking</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+      <!-- Salon -->
+      <div class="portfolio-card fade-up" onclick="openModal('salon')">
+        <div class="portfolio-preview p-salon">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#6a1b9a;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">✨ Glam Studio</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Services</span>
+                  <span style="color:rgba(255,255,255,0.7)">Book</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#6a1b9a,#4a148c);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Look Beautiful, Feel Confident</div>
+                  <div class="mhs">Premium salon services Lucknow</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#f3e5f5; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#fce4ec; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#ede7f6; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Beauty Salon / Spa</h3>
+          <p>Services list, gallery, price list, WhatsApp booking</p>
+          <div class="portfolio-tags">
+            <span class="tag">Salon</span>
+            <span class="tag">Beauty</span>
+            <span class="tag">Spa</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+      <!-- Coaching -->
+      <div class="portfolio-card fade-up" onclick="openModal('coaching')">
+        <div class="portfolio-preview p-coaching">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#1b5e20;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">📚 Excel Academy</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Courses</span>
+                  <span style="color:rgba(255,255,255,0.7)">Enroll</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#1b5e20,#0a3d0a);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Success Starts Here</div>
+                  <div class="mhs">Top coaching in Lucknow</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#e8f5e9; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#f1f8e9; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#e0f2f1; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Coaching / Tuition Center</h3>
+          <p>Courses, faculty, results, admission form, fees</p>
+          <div class="portfolio-tags">
+            <span class="tag">Education</span>
+            <span class="tag">Coaching</span>
+            <span class="tag">Tuition</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+      <!-- Real Estate -->
+      <div class="portfolio-card fade-up" onclick="openModal('realestate')">
+        <div class="portfolio-preview p-realstate">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#4e342e;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">🏠 PropLuck Homes</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Buy</span>
+                  <span style="color:rgba(255,255,255,0.7)">Rent</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#4e342e,#3e2723);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Find Your Dream Home</div>
+                  <div class="mhs">Lucknow's trusted property dealer</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#efebe9; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#fbe9e7; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#fff8e1; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Real Estate / Property</h3>
+          <p>Property listings, photo gallery, contact agent, location</p>
+          <div class="portfolio-tags">
+            <span class="tag">Real Estate</span>
+            <span class="tag">Property</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="portfolio-card fade-up" onclick="openModal('events')">
+        <div class="portfolio-preview p-events">
+          <div class="preview-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#ff5f56"></div>
+              <div class="mockup-dot" style="background:#ffbd2e"></div>
+              <div class="mockup-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="mockup-content">
+              <div class="mockup-header" style="background:#880e4f;">
+                <span style="color:#fff; font-size:6px; font-weight:700; font-family:sans-serif;">🎉 Dream Events</span>
+                <div class="mockup-nav" style="margin-left:auto;">
+                  <span style="color:rgba(255,255,255,0.7)">Gallery</span>
+                  <span style="color:rgba(255,255,255,0.7)">Book</span>
+                </div>
+              </div>
+              <div class="mockup-hero-img" style="background:linear-gradient(135deg,#880e4f,#560027);">
+                <div class="mockup-hero-text">
+                  <div class="mht">Making Memories</div>
+                  <div class="mhs">Weddings & events Lucknow</div>
+                </div>
+              </div>
+              <div class="mockup-cards" style="padding:4px;">
+                <div class="mockup-card" style="background:#fce4ec; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#f8bbd0; border-radius:2px;height:16px;"></div>
+                <div class="mockup-card" style="background:#fce4ec; border-radius:2px;height:16px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Event Planner / Photography</h3>
+          <p>Portfolio gallery, packages, testimonials, inquiry form</p>
+          <div class="portfolio-tags">
+            <span class="tag">Events</span>
+            <span class="tag">Wedding</span>
+            <span class="tag">Photography</span>
+          </div>
+          <button class="preview-btn">Live Preview Dekho →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Simple 4-Step Process</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">1</div>
+        <h3>Baat Karo</h3>
+        <p>WhatsApp ya call pe apni requirement batao — 10 minute kafi hai</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">2</div>
+        <h3>Quote & Advance</h3>
+        <p>Fixed quote milega — 50% advance pe kaam shuru</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">3</div>
+        <h3>Design & Review</h3>
+        <p>Draft dikhaunga, aapke changes karaunga jab tak satisfied nahi ho</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">4</div>
+        <h3>Delivery</h3>
+        <p>Live website milegi — baaki 50% tab dena</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding: 6rem 5%; text-align:center;">
+  <div class="contact-wrap fade-up">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Aaj Hi Shuru Karein</h2>
+    <p class="section-sub" style="margin: 0 auto;">Lucknow mein hoon — seedha mil bhi sakte hain. Call, WhatsApp, ya email — jo aasaan lage.</p>
+    <div class="contact-cards">
+      <a href="https://wa.me/918808913837" class="contact-card">
+        <div class="ci">💬</div>
+        <div class="ct">WhatsApp</div>
+        <div class="cv">83189 13837</div>
+      </a>
+      <a href="tel:+918808913837" class="contact-card">
+        <div class="ci">📞</div>
+        <div class="ct">Call</div>
+        <div class="cv">83189 13837</div>
+      </a>
+      <a href="mailto:shivambhartiofficial@gmail.com" class="contact-card">
+        <div class="ci">✉️</div>
+        <div class="ct">Email</div>
+        <div class="cv">shivambhartiofficial</div>
+      </a>
+    </div>
+    <a href="https://wa.me/918808913837?text=Hello%20Shivam%2C%20mujhe%20website%20banwani%20hai" class="btn-primary" style="font-size:1rem; padding:1rem 2.5rem;">
+      WhatsApp pe Message Karo →
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Shivam Bharti</span> · Lucknow, UP</p>
+  <p style="color: var(--gray);">WordPress Websites · Social Media · Content Creation</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Website Preview</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="demo-site" id="demo-content"></div>
+      <div class="modal-actions">
+        <a href="https://wa.me/918808913837?text=Hello%20Shivam%2C%20mujhe%20isi%20tarah%20ki%20website%20banwani%20hai" class="whatsapp-btn">
+          💬 Aisi Website Chahiye — WhatsApp Karo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const demos = {
+  restaurant: {
+    title: 'Restaurant / Dhaba Website',
+    primary: '#8B1a1a', secondary: '#5c0f0f', accent: '#e65100',
+    name: 'Spice Garden Restaurant',
+    tagline: 'Authentic Lucknowi Cuisine Since 1995',
+    desc: 'Lucknow ke dil mein — best kebabs, biryani, aur Awadhi cuisine',
+    cards: [
+      {icon:'🍢', title:'Kebabs & Tikka', desc:'Hand-crafted with secret spices'},
+      {icon:'🍚', title:'Dum Biryani', desc:'Slow-cooked Lucknowi style'},
+      {icon:'🍮', title:'Meetha', desc:'Shahi tukda, phirni, kheer'}
+    ]
+  },
+  clinic: {
+    title: 'Clinic / Doctor Website',
+    primary: '#1565C0', secondary: '#0d47a1', accent: '#1976D2',
+    name: 'LifeCare Clinic',
+    tagline: 'Your Health, Our Priority',
+    desc: 'Expert doctors available Mon–Sat · Book appointment online',
+    cards: [
+      {icon:'🩺', title:'General Medicine', desc:'Dr. Sharma — 15 yrs experience'},
+      {icon:'🦷', title:'Dental Care', desc:'Dr. Verma — expert dentist'},
+      {icon:'👶', title:'Pediatrics', desc:'Dr. Singh — child specialist'}
+    ]
+  },
+  salon: {
+    title: 'Beauty Salon / Spa Website',
+    primary: '#6a1b9a', secondary: '#4a148c', accent: '#8e24aa',
+    name: 'Glam Studio',
+    tagline: 'Look Beautiful, Feel Confident',
+    desc: 'Premium beauty services in Lucknow — Walk-in & appointments welcome',
+    cards: [
+      {icon:'💇', title:'Hair Services', desc:'Cut, color, keratin, styling'},
+      {icon:'💅', title:'Nail Art', desc:'Manicure, pedicure, nail art'},
+      {icon:'✨', title:'Skin & Spa', desc:'Facials, cleanup, waxing'}
+    ]
+  },
+  coaching: {
+    title: 'Coaching Center Website',
+    primary: '#1b5e20', secondary: '#0a3d0a', accent: '#2e7d32',
+    name: 'Excel Academy',
+    tagline: 'Success Starts Here',
+    desc: 'Lucknow ki top coaching for Class 9-12, IIT-JEE, NEET, UPSC',
+    cards: [
+      {icon:'🔬', title:'Science (PCM/PCB)', desc:'Class 9–12 expert faculty'},
+      {icon:'📐', title:'IIT-JEE / NEET', desc:'Proven results, small batches'},
+      {icon:'📋', title:'UPSC / State PCS', desc:'GS + Optional preparation'}
+    ]
+  },
+  realestate: {
+    title: 'Real Estate Website',
+    primary: '#4e342e', secondary: '#3e2723', accent: '#6d4c41',
+    name: 'PropLuck Homes',
+    tagline: "Find Your Dream Home in Lucknow",
+    desc: 'Trusted property dealer — Buy, Sell, Rent in Gomti Nagar, Hazratganj & more',
+    cards: [
+      {icon:'🏠', title:'Residential', desc:'Flats, houses, villas'},
+      {icon:'🏢', title:'Commercial', desc:'Shops, offices, warehouses'},
+      {icon:'🌱', title:'Plots', desc:'NA plots, agricultural land'}
+    ]
+  },
+  events: {
+    title: 'Event Planner Website',
+    primary: '#880e4f', secondary: '#560027', accent: '#ad1457',
+    name: 'Dream Events',
+    tagline: 'Making Your Moments Unforgettable',
+    desc: 'Weddings, birthdays, corporate events — Lucknow ka #1 event planner',
+    cards: [
+      {icon:'💍', title:'Wedding Planning', desc:'Full decoration & management'},
+      {icon:'🎂', title:'Birthday Events', desc:'Theme parties, cake, decor'},
+      {icon:'🎪', title:'Corporate Events', desc:'Professional event execution'}
+    ]
+  }
+};
+
+function openModal(type) {
+  const d = demos[type];
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('demo-content').innerHTML = `
+    <div style="--site-primary:${d.primary}; --site-secondary:${d.secondary}; --site-accent:${d.accent}">
+      <div class="demo-nav">
+        <div class="demo-logo">${d.name}</div>
+        <div class="demo-nav-links">
+          <a href="#">Home</a><a href="#">Services</a><a href="#">About</a><a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="demo-hero">
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+        <p style="font-size:0.85rem; opacity:0.7; margin-bottom:1.5rem">${d.desc}</p>
+        <button class="demo-cta" style="background:${d.accent}">Contact Now</button>
+      </div>
+      <div class="demo-content">
+        <div class="demo-section-title">Our Services</div>
+        <div class="demo-cards">
+          ${d.cards.map(c => `
+            <div class="demo-card">
+              <div class="demo-card-icon">${c.icon}</div>
+              <h3>${c.title}</h3>
+              <p>${c.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+        <div style="background:#fff; border-radius:6px; padding:1rem; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <p style="font-size:0.85rem; color:#333; margin-bottom:0.5rem; font-weight:600;">📍 Lucknow, Uttar Pradesh</p>
+          <p style="font-size:0.8rem; color:#666;">📞 WhatsApp: 83189 13837 &nbsp;|&nbsp; ✉️ shivambhartiofficial@gmail.com</p>
+        </div>
+      </div>
+      <div class="demo-footer">© 2025 ${d.name} · Website by Shivam Bharti</div>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if(entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
