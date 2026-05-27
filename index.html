@@ -437,6 +437,187 @@
       letter-spacing: 0.08em;
     }
   }
+
+  /* ===== ABOUT ===== */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;
+  }
+  .about-avatar {
+    width: 160px; height: 160px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; margin-bottom: 2rem;
+    border: 3px solid rgba(201,168,76,0.3);
+    flex-shrink: 0;
+  }
+  .about-left { display: flex; flex-direction: column; align-items: flex-start; }
+  .about-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .about-badge {
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gold); padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.78rem; letter-spacing: 0.05em;
+  }
+  .about-right p { color: var(--gray); line-height: 1.9; margin-bottom: 1rem; }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2rem;
+  }
+  .about-stat {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 1.2rem; text-align: center;
+  }
+  .about-stat .n { font-family: 'Playfair Display',serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+  .about-stat .l { color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* ===== REVIEWS ===== */
+  .reviews-section { background: rgba(255,255,255,0.015); }
+  .overall-rating {
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 14px; padding: 2rem 2.5rem; margin-bottom: 3rem;
+    max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  .rating-big { text-align: center; flex-shrink: 0; }
+  .rating-big .score { font-family: 'Playfair Display',serif; font-size: 4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .rating-big .stars { color: var(--gold); font-size: 1.3rem; margin: 0.3rem 0; }
+  .rating-big .count { color: var(--gray); font-size: 0.8rem; }
+  .rating-bars { flex: 1; min-width: 220px; }
+  .rating-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .rating-row span { color: var(--gray); font-size: 0.8rem; min-width: 36px; }
+  .rating-bar-bg { flex: 1; height: 7px; background: rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; }
+  .rating-bar-fill { height: 100%; background: var(--gold); border-radius: 10px; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .review-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 1.75rem; transition: border-color 0.2s;
+  }
+  .review-card:hover { border-color: rgba(201,168,76,0.25); }
+  .review-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .review-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0; color: var(--navy); font-weight: 700;
+  }
+  .review-name { font-weight: 500; font-size: 0.95rem; }
+  .review-meta { color: var(--gray); font-size: 0.75rem; margin-top: 0.1rem; }
+  .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .review-text { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
+  .review-service {
+    display: inline-block; margin-top: 1rem;
+    background: rgba(201,168,76,0.1); color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.2rem 0.7rem; border-radius: 3px; font-size: 0.7rem; letter-spacing: 0.05em;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item {
+    border: 1px solid rgba(255,255,255,0.07); border-radius: 10px;
+    margin-bottom: 0.75rem; overflow: hidden; transition: border-color 0.2s;
+  }
+  .faq-item.open { border-color: rgba(201,168,76,0.25); }
+  .faq-q {
+    width: 100%; background: rgba(255,255,255,0.03); border: none;
+    color: var(--white); padding: 1.25rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-size: 0.95rem; font-weight: 500; text-align: left;
+    gap: 1rem; transition: background 0.2s;
+  }
+  .faq-q:hover { background: rgba(255,255,255,0.06); }
+  .faq-icon {
+    color: var(--gold); font-size: 1.2rem; flex-shrink: 0;
+    transition: transform 0.3s; line-height: 1;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s;
+    color: var(--gray); font-size: 0.9rem; line-height: 1.8;
+    padding: 0 1.5rem;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+
+  /* ===== MAP ===== */
+  .map-section { background: rgba(255,255,255,0.01); }
+  .map-container { max-width: 1200px; margin: 0 auto; }
+  .map-wrap {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .map-wrap iframe { display: block; width: 100%; height: 400px; border: none; filter: grayscale(20%) invert(92%) hue-rotate(180deg) brightness(0.85); }
+
+  /* ===== FOOTER (updated) ===== */
+  .footer-main {
+    padding: 4rem 5% 2rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem; max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .footer-brand p { color: var(--gray); font-size: 0.88rem; line-height: 1.8; margin: 1rem 0 1.5rem; max-width: 300px; }
+  .footer-social { display: flex; gap: 0.75rem; }
+  .social-btn {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray); text-decoration: none; font-size: 1.1rem;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.3); color: var(--gold); transform: translateY(-2px); }
+  .footer-col h4 {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a { color: var(--gray); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 5%; max-width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { color: var(--gray); font-size: 0.78rem; }
+  .footer-bottom span { color: var(--gold); }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* ===== POLICY PAGES ===== */
+  .page-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: var(--navy); overflow-y: auto;
+  }
+  .page-overlay.open { display: block; }
+  .policy-page {
+    max-width: 820px; margin: 0 auto; padding: 6rem 2rem 4rem;
+  }
+  .policy-page h1 {
+    font-family: 'Playfair Display',serif; font-size: 2.2rem;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+  .policy-date { color: var(--gold); font-size: 0.8rem; margin-bottom: 2.5rem; letter-spacing: 0.05em; }
+  .policy-page h2 {
+    font-family: 'Playfair Display',serif; font-size: 1.2rem;
+    color: var(--white); margin: 2rem 0 0.75rem;
+    border-left: 3px solid var(--gold); padding-left: 1rem;
+  }
+  .policy-page p { color: var(--gray); line-height: 1.85; font-size: 0.92rem; margin-bottom: 0.75rem; }
+  .policy-page ul { color: var(--gray); font-size: 0.92rem; line-height: 1.85; padding-left: 1.5rem; margin-bottom: 1rem; }
+  .policy-back {
+    position: fixed; top: 1.2rem; left: 1.5rem;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); padding: 0.5rem 1rem; border-radius: 5px;
+    font-size: 0.82rem; cursor: pointer; z-index: 600;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: background 0.2s;
+  }
+  .policy-back:hover { background: rgba(201,168,76,0.25); }
 </style>
 </head>
 <body>
@@ -458,9 +639,12 @@
     </div>
   </a>
   <ul class="nav-links" id="nav-links">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
     <li><a href="#services" onclick="closeNav()">Services</a></li>
     <li><a href="#portfolio" onclick="closeNav()">Portfolio</a></li>
     <li><a href="#process" onclick="closeNav()">Process</a></li>
+    <li><a href="#reviews" onclick="closeNav()">Reviews</a></li>
+    <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
     <li><a href="#contact" onclick="closeNav()">Contact</a></li>
   </ul>
   <div style="display:flex; align-items:center; gap:1rem;">
@@ -503,6 +687,45 @@
           <div class="label">Face-to-face meetings possible</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding: 6rem 5%;">
+  <div class="about-grid">
+    <div class="about-left fade-up">
+      <div class="about-avatar">👨‍💻</div>
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Shivam Bharti</h2>
+      <p style="color:var(--gray); line-height:1.8; margin-bottom:1rem;">Lucknow-based WordPress developer aur Digital Marketing expert hoon. Local businesses ko online laana mera passion hai — affordable prices mein professional results.</p>
+      <div class="about-badges">
+        <span class="about-badge">📍 Lucknow, UP</span>
+        <span class="about-badge">💻 WordPress Expert</span>
+        <span class="about-badge">📱 Social Media Manager</span>
+        <span class="about-badge">🎯 SEO Specialist</span>
+        <span class="about-badge">🤝 Face-to-face Available</span>
+      </div>
+    </div>
+    <div class="about-right fade-up">
+      <p>Main <strong style="color:var(--white)">Shivam Bharti</strong> hoon — Lucknow mein rehne wala ek passionate web developer aur digital marketer. Mere paas WordPress website development aur social media management mein strong expertise hai.</p>
+      <p>Mera goal hai ki Lucknow ke har chhote-bade business ka ek strong online presence ho — chahe wo restaurant ho, clinic ho, salon ho ya coaching center. Main fixed pricing par kaam karta hoon — koi hidden charges nahi.</p>
+      <p>Aap chahein to personally milke baat karte hain — main Lucknow mein hi hoon. WhatsApp, call, ya email — jo bhi aapko convenient lage.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="n">50+</div>
+          <div class="l">Projects Done</div>
+        </div>
+        <div class="about-stat">
+          <div class="n">3+</div>
+          <div class="l">Years Exp.</div>
+        </div>
+        <div class="about-stat">
+          <div class="n">100%</div>
+          <div class="l">Satisfaction</div>
+        </div>
+      </div>
+      <a href="https://wa.me/918808913837?text=Hello%20Shivam%2C%20I%20want%20to%20know%20more%20about%20your%20services" class="btn-primary" style="margin-top:2rem; display:inline-block;">Chat on WhatsApp →</a>
     </div>
   </div>
 </section>
@@ -865,6 +1088,231 @@
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews" style="padding: 6rem 5%;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="section-label">Client Feedback</div>
+      <h2 class="section-title">Customer Reviews</h2>
+      <p class="section-sub" style="margin:0 auto;">Real clients, real results — log jo mere saath kaam kar chuke hain.</p>
+    </div>
+
+    <div class="overall-rating fade-up">
+      <div class="rating-big">
+        <div class="score">4.9</div>
+        <div class="stars">★★★★★</div>
+        <div class="count">Based on 24 reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-row"><span>5 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:88%"></div></div><span style="min-width:28px">21</span></div>
+        <div class="rating-row"><span>4 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:10%"></div></div><span style="min-width:28px">2</span></div>
+        <div class="rating-row"><span>3 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:4%"></div></div><span style="min-width:28px">1</span></div>
+        <div class="rating-row"><span>2 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:0%"></div></div><span style="min-width:28px">0</span></div>
+        <div class="rating-row"><span>1 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:0%"></div></div><span style="min-width:28px">0</span></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rahul Gupta</div>
+            <div class="review-meta">Restaurant Owner · Lucknow</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Bahut hi professional kaam kiya Shivam ne. Meri restaurant ki website 7 din mein ready thi aur Google par bhi rank karne lagi. Bahut satisfied hoon!"</div>
+        <span class="review-service">WordPress Website</span>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">P</div>
+          <div>
+            <div class="review-name">Priya Verma</div>
+            <div class="review-meta">Salon Owner · Gomti Nagar</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Instagram management se meri salon ki bookings double ho gayi. Posts professional lagte hain aur regular aate hain. Great value for money!"</div>
+        <span class="review-service">Social Media Management</span>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Dr. Amit Singh</div>
+            <div class="review-meta">Clinic Owner · Hazratganj</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Clinic website bilkul waisi bani jaisi main chahta tha. Appointment form, Google Maps, sab kuch perfect hai. Patients ko dhundne mein easy ho gaya."</div>
+        <span class="review-service">WordPress Website</span>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sandeep Tiwari</div>
+            <div class="review-meta">Coaching Center · Aliganj</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Budget mein acha kaam mila. Face-to-face meeting possible hona best part tha — directly discuss karke exactly jo chahiye tha wo mila."</div>
+        <span class="review-service">Standard Website + SEO</span>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">N</div>
+          <div>
+            <div class="review-name">Neha Srivastava</div>
+            <div class="review-meta">Boutique Owner · Indira Nagar</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"WhatsApp se bahut easy coordination tha. Changes turant kiye aur delivery time pe hui. Sabse best — local banda hai to trust bhi aaya."</div>
+        <span class="review-service">Basic Website</span>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-header">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Mohammad Faizan</div>
+            <div class="review-meta">Property Dealer · Lucknow</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Property listing website ka kaam achha kiya. Thoda time laga initially but end result acha tha. Support bhi milta raha."</div>
+        <span class="review-service">WordPress Website</span>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="https://wa.me/918808913837?text=Hello%20Shivam%2C%20I%20want%20to%20share%20my%20feedback" class="btn-outline" style="display:inline-block;">Leave a Review →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding: 6rem 5%;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub" style="margin:0 auto;">Jo sabse zyada poochha jaata hai — sab jawaab yahan hain.</p>
+    </div>
+    <div class="faq-list fade-up">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Website banwane mein kitna time lagta hai?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Basic website 5-7 working days mein ready ho jaati hai. Standard website with SEO 7-10 days mein deliver hoti hai. Aur complex projects ke liye timeline pehle discuss karta hoon.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya payment pehle karni padegi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Haan, kaam shuru karne se pehle 50% advance liya jaata hai. Baki 50% website deliver hone ke baad. UPI, bank transfer — jo bhi aapko convenient ho.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya website mobile-friendly hogi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Bilkul! Har website fully mobile responsive hoti hai — smartphone, tablet, aur desktop — sab par perfectly kaam karti hai. Aaj kal 70%+ visitors mobile se aate hain isliye yeh bahut zaroori hai.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Hosting aur domain kaun lega?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Main aapko recommend karta hoon kahan se lena hai aur setup mein help karta hoon. Typically domain ₹700-1200/year aur hosting ₹3000-5000/year tak milti hai. Ya aap mujhse bhi manage karwa sakte hain.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Baad mein website mein changes karna ho to?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Standard package mein 1 month free support milta hai. Uske baad small changes ₹500 se shuru hote hain. Ya ek affordable maintenance package bhi available hai.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Social media management mein exactly kya karte ho?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Monthly 10 posts (Canva graphics + captions + hashtags), 1 Reel, monthly performance report, aur festival/occasion posts. Aapko sirf approve karna hai — baaki sab main handle karta hoon.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya aap Lucknow se bahar bhi kaam karte hain?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Haan! Websites aur social media management ka kaam puri India mein remotely kiya ja sakta hai. WhatsApp aur video call se sab kuch ho jaata hai.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya website par online payment ya booking integration ho sakti hai?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Haan, Razorpay, PayU ya UPI payment integration add ki ja sakti hai. Appointment booking system bhi lagaya ja sakta hai. Iske liye custom quote milega.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Google par website rank kaisa hogi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Standard package mein basic on-page SEO setup hota hai — title tags, meta descriptions, Google Search Console, sitemap sab. Local SEO ke liye Google Business Profile setup bhi karta hoon alag se.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya mujhe ek sample ya demo pehle dikh sakta hai?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Bilkul! Upar Portfolio section mein mere 6 types ke live demo websites hain. Aap un par click karke dekh sakte hain kaise lagti hain websites. Aur baat karne ke baad ek basic wireframe bhi bana ke dikha sakta hoon.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP -->
+<section class="map-section" id="location" style="padding: 6rem 5%;">
+  <div class="map-container">
+    <div class="section-header fade-up" style="text-align:center; margin-bottom:2.5rem;">
+      <div class="section-label">Location</div>
+      <h2 class="section-title">Find Me in Lucknow</h2>
+      <p class="section-sub" style="margin:0 auto;">Lucknow mein hoon — meetup possible hai!</p>
+    </div>
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114938.16666394624!2d80.84589875!3d26.8466937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Lucknow, Uttar Pradesh - Shivam Bharti Location">
+      </iframe>
+    </div>
+    <div style="text-align:center; margin-top:1.5rem; color:var(--gray); font-size:0.9rem;">
+      📍 Lucknow, Uttar Pradesh &nbsp;|&nbsp; 💬 <a href="https://wa.me/918808913837" style="color:var(--gold); text-decoration:none;">WhatsApp for meetup →</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" style="padding: 6rem 5%; text-align:center;">
   <div class="contact-wrap fade-up">
@@ -895,9 +1343,209 @@
 </section>
 
 <footer>
-  <p>© 2025 <span>Shivam Bharti</span> · Lucknow, Uttar Pradesh</p>
-  <p style="color: var(--gray);">WordPress Websites · Social Media Management · Digital Marketing</p>
+  <div class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="text-decoration:none;">
+          <img src="logo.png" alt="Shivam Bharti" style="height:36px; width:36px; object-fit:contain; border-radius:8px;">
+          <div class="logo-text">
+            <span class="logo-name">Shivraj Ventures</span>
+            <span class="logo-tagline">Web &amp; Digital</span>
+          </div>
+        </a>
+        <p>Lucknow ke businesses ke liye affordable websites aur social media management. Professional kaam, fixed prices, guaranteed satisfaction.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/918808913837" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp Business" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#services">Services & Pricing</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" onclick="openPage('privacy'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="openPage('disclaimer'); return false;">Disclaimer</a></li>
+          <li><a href="#" onclick="openPage('terms'); return false;">Terms of Service</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem;">Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/918808913837">💬 WhatsApp</a></li>
+          <li><a href="tel:+918808913837">📞 88089 13837</a></li>
+          <li><a href="mailto:shivambhartiofficial@gmail.com">✉️ Email</a></li>
+          <li><a href="#location">📍 Lucknow, UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 <span>Shivam Bharti</span> · Lucknow, Uttar Pradesh · All Rights Reserved</p>
+    <p>
+      <a href="#" onclick="openPage('privacy'); return false;" style="color:var(--gray); text-decoration:none; margin-right:1rem; font-size:0.78rem;">Privacy Policy</a>
+      <a href="#" onclick="openPage('disclaimer'); return false;" style="color:var(--gray); text-decoration:none; margin-right:1rem; font-size:0.78rem;">Disclaimer</a>
+      <a href="#" onclick="openPage('terms'); return false;" style="color:var(--gray); text-decoration:none; font-size:0.78rem;">Terms of Service</a>
+    </p>
+  </div>
 </footer>
+
+<!-- POLICY PAGES (overlay) -->
+<div class="page-overlay" id="page-privacy">
+  <a href="#" class="policy-back" onclick="closePage('privacy'); return false;">← Back</a>
+  <div class="policy-page">
+    <h1>Privacy Policy</h1>
+    <div class="policy-date">Last Updated: January 2025</div>
+
+    <p>Shivam Bharti ("main", "mujhe", "mera") apke privacy ke baare mein serious hoon. Yeh Privacy Policy batati hai ki main aapki personal information kaise collect, use aur protect karta hoon jab aap mere website ya services use karte hain.</p>
+
+    <h2>1. Information Jo Main Collect Karta Hoon</h2>
+    <p>Jab aap mujhse contact karte hain (WhatsApp, call, ya email ke zariye), main yeh information collect kar sakta hoon:</p>
+    <ul>
+      <li>Aapka naam aur contact number</li>
+      <li>Email address (agar diya gaya ho)</li>
+      <li>Business ka naam aur type</li>
+      <li>Service requirements aur project details</li>
+    </ul>
+
+    <h2>2. Information Ka Use</h2>
+    <p>Collected information sirf in kamon ke liye use hoti hai:</p>
+    <ul>
+      <li>Aapki query ka jawab dene ke liye</li>
+      <li>Requested services deliver karne ke liye</li>
+      <li>Project updates aur communication ke liye</li>
+      <li>Invoice aur payment processing ke liye</li>
+    </ul>
+
+    <h2>3. Information Sharing</h2>
+    <p>Main aapki personal information kisi third party ke saath share, sell ya rent nahi karta. Aapka data sirf mere paas safe rehta hai aur sirf project ke kaam mein use hota hai.</p>
+
+    <h2>4. WhatsApp Communications</h2>
+    <p>Jab aap WhatsApp par contact karte hain, to conversation WhatsApp ke privacy policy ke under hoti hai. Main WhatsApp conversations ka use sirf business purposes ke liye karta hoon.</p>
+
+    <h2>5. Data Security</h2>
+    <p>Aapki information ko secure rakhne ki poori koshish karta hoon. Koi bhi system 100% secure nahi hota, lekin main reasonable precautions leta hoon.</p>
+
+    <h2>6. Cookies</h2>
+    <p>Yeh website basic functionality ke liye cookies use kar sakti hai. Koi tracking ya advertising cookies nahi hain.</p>
+
+    <h2>7. Aapke Rights</h2>
+    <p>Aap apni information access, correct ya delete karne ke liye mujhse contact kar sakte hain: <a href="mailto:shivambhartiofficial@gmail.com" style="color:var(--gold);">shivambhartiofficial@gmail.com</a></p>
+
+    <h2>8. Contact</h2>
+    <p>Privacy se related koi bhi sawaal ho to:<br>
+    📧 shivambhartiofficial@gmail.com<br>
+    💬 WhatsApp: 88089 13837</p>
+  </div>
+</div>
+
+<div class="page-overlay" id="page-disclaimer">
+  <a href="#" class="policy-back" onclick="closePage('disclaimer'); return false;">← Back</a>
+  <div class="policy-page">
+    <h1>Disclaimer</h1>
+    <div class="policy-date">Last Updated: January 2025</div>
+
+    <p>Yeh Disclaimer, Shivam Bharti ki website aur services ke use ke baare mein aapko important information deta hai. Please ise dhyan se padhen.</p>
+
+    <h2>1. Website Information</h2>
+    <p>Is website par di gayi information sirf general informational purposes ke liye hai. Main koshish karta hoon ki sab kuch accurate aur up-to-date rahe, lekin kisi bhi information ki completeness ya accuracy ki guarantee nahi di jaati.</p>
+
+    <h2>2. Pricing Disclaimer</h2>
+    <p>Website par show ki gayi prices indicative hain aur project requirements ke hisaab se change ho sakti hain. Final pricing project discussion ke baad confirm hoti hai. Prices mein hosting, domain, aur third-party plugins/themes ka cost shaamil nahi hai jab tak specifically mention na kiya gaya ho.</p>
+
+    <h2>3. Results Disclaimer</h2>
+    <p>Portfolio mein dikhaaye gaye samples aur testimonials past results hain. Future results guarantee nahi kiye jaate. Website traffic, Google rankings aur social media growth depend karte hain multiple factors par jo mere control mein nahi hain (Google algorithm, market conditions, etc.).</p>
+
+    <h2>4. Third Party Services</h2>
+    <p>Main third-party services jaise WordPress, Instagram, LinkedIn, WhatsApp, Google Maps etc. use karta hoon. In platforms ki policies ya availability ke liye main responsible nahi hoon.</p>
+
+    <h2>5. Portfolio Demos</h2>
+    <p>Portfolio mein dikhaaye gaye website demos sample/demonstration purposes ke liye hain. Ye real businesses ho bhi sakti hain ya nahi bhi — clearly mention hai jo live hain.</p>
+
+    <h2>6. Professional Advice</h2>
+    <p>Yeh website legal, financial ya business advice nahi deti. Kisi bhi important business decision ke liye qualified professionals se consult karein.</p>
+
+    <h2>7. Limitations of Liability</h2>
+    <p>Shivam Bharti kisi bhi indirect, incidental ya consequential damages ke liye liable nahi hoga jo services use karne se ya na kar paane se ho.</p>
+
+    <h2>8. Contact</h2>
+    <p>Koi sawaal ho to contact karein:<br>
+    📧 shivambhartiofficial@gmail.com<br>
+    💬 WhatsApp: 88089 13837</p>
+  </div>
+</div>
+
+<div class="page-overlay" id="page-terms">
+  <a href="#" class="policy-back" onclick="closePage('terms'); return false;">← Back</a>
+  <div class="policy-page">
+    <h1>Terms of Service</h1>
+    <div class="policy-date">Last Updated: January 2025</div>
+
+    <p>Yeh Terms of Service ("Terms") Shivam Bharti aur aapke beech ek agreement hai. Mere services use karke aap in Terms se agree karte hain.</p>
+
+    <h2>1. Services</h2>
+    <p>Main yeh services provide karta hoon:</p>
+    <ul>
+      <li>WordPress website design aur development</li>
+      <li>Social media management (Instagram, Facebook, LinkedIn)</li>
+      <li>Basic SEO setup aur optimization</li>
+      <li>Website maintenance aur support</li>
+    </ul>
+
+    <h2>2. Payment Terms</h2>
+    <p>Kaam shuru hone se pehle 50% advance payment zaroori hai. Baki 50% project delivery ke time due hota hai. Payment UPI, bank transfer, ya cash (in-person) se accepted hai. Advance refundable nahi hai agar client bina valid reason ke project cancel kare.</p>
+
+    <h2>3. Project Timeline</h2>
+    <p>Delivery timeline project discussion ke time confirm hoti hai. Timeline tab se count hoti hai jab saara content (text, images, logo) client ke taraf se milta hai. Delays hone par timely communication ki jaati hai.</p>
+
+    <h2>4. Client Responsibilities</h2>
+    <ul>
+      <li>Accurate aur complete information provide karna</li>
+      <li>Timely feedback aur approvals dena</li>
+      <li>Content (text/images) samay par provide karna</li>
+      <li>Hosting aur domain fees khud manage karna (jab tak separately agree na ho)</li>
+    </ul>
+
+    <h2>5. Revisions</h2>
+    <p>Project ke dauraan reasonable revisions included hain. Approved design ke baad major changes ya scope creep ke liye additional charges lag sakte hain.</p>
+
+    <h2>6. Intellectual Property</h2>
+    <p>Final payment ke baad website ka ownership aapko transfer ho jaata hai. Main apne work ko portfolio mein dikhane ka right reserve karta hoon (client name confidential rakh ke).</p>
+
+    <h2>7. Support Policy</h2>
+    <p>Standard package mein delivery ke baad 1 month free support included hai. Iske baad support chargeable hoga as per prevailing rates. Social media management monthly renewable contract par hoti hai.</p>
+
+    <h2>8. Confidentiality</h2>
+    <p>Project ke dauraan share ki gayi business information strictly confidential rakhi jaati hai aur kisi third party ko disclose nahi ki jaati.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>Yeh Terms Uttar Pradesh, India ke laws ke under governed hain. Koi bhi dispute Lucknow courts ke jurisdiction mein aayega.</p>
+
+    <h2>10. Contact</h2>
+    <p>Koi sawaal ho to:<br>
+    📧 shivambhartiofficial@gmail.com<br>
+    💬 WhatsApp: 88089 13837<br>
+    📍 Lucknow, Uttar Pradesh</p>
+  </div>
+</div>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal">
